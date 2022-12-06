@@ -1,12 +1,16 @@
-elves={}
-i=0
+elves = {}
+i = 0
 
-with open("day1_input.txt","r") as f:
+with open("day1_input.txt", "r") as f:
     for line in f:
-        cal=line.strip("\n")
+        cal = line.strip("\n")
         if cal:
-            elves[i]=elves.get(i,0)+int(cal)
+            elves[i] = elves.get(i, 0) + int(cal)
         else:
-            i+=1
+            i += 1
 
-print(max(elves.values()))
+sorted_values = sorted(list(elves.values()))
+last_three = sorted_values[-3:]
+
+print(last_three)
+print(sum(last_three))
